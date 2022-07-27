@@ -6,15 +6,15 @@ Virtual Box - программа для запуска виртуальных м
 
 ## Шаг 1
 
-![vb-1-file.PNG](../vb-1-file.PNG)
+![vb-1-file.PNG](../img/vb-1-file.PNG)
 
 ## Шаг 2
 
-![vb-1-import.PNG](../vb-1-import.PNG)
+![vb-1-import.PNG](../img/vb-1-import.PNG)
 
 ## Шаг 3
 
-![vb-3-import.PNG](../vb-3-import.PNG)
+![vb-3-import.PNG](../img/vb-3-import.PNG)
 
 
 
