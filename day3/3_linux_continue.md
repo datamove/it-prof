@@ -14,7 +14,7 @@
 
 Нажмите Ctrl-C чтоб прервать
 
-![it3-linux-net1.jpg](it3-linux-net1.jpg)
+![it3-linux-net1.jpg](../img/it3-linux-net1.jpg)
 
 ## Задание с ping
 
@@ -29,7 +29,7 @@
 
 ## IP-address
 
-![it3-linux-net2.jpg](it3-linux-net2.jpg)
+![it3-linux-net2.jpg](../img/it3-linux-net2.jpg)
 
 ## Задание с интернетом
 
