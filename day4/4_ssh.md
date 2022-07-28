@@ -44,7 +44,7 @@ ssh-keygen
 
 примите зачения по умолчанию - нажимайте ввод.
 
-![ssh-1-keygen](../img/ssh-1-keygen)
+![ssh-1-keygen](../img/ssh-1-keygen.jpg)
 
 ### Посмотрите, как выглядят ключи
 
