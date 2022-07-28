@@ -39,7 +39,7 @@ gpg --encrypt --sign --armor -r person@email.com send.txt
 
 Посмотрите его содержимое:
 
-![gpg-3-message.jpg](../img/gpg-3-message.jpg)
+![gpg-2-message.jpg](../img/gpg-2-message.jpg)
 
 
 ## Расшифровка сообщения.
