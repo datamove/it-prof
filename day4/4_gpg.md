@@ -15,16 +15,20 @@ gpg --gen-key
 Real Name: введите какие-нбудь имя
 email: адрес эл. почты - это уникальный идентификатор вашего ключа
 
-Придумайте пароль для ключа и дважды введите.
+Придумайте пароль для ключа и дважды введите в окошке.
 
 
-![pgp-1-gen.jpg](../img/pgp-1-gen.jpg)
+![gpg-1-gen.jpg](../img/gpg-1-gen.jpg)
 
 ## Зашифровка сообщения
 
 Создайте файл send.txt c каким-нибудь содержимым, например командой echo:
 
+```bash
 echo "Hello with PGP" > send.txt
+```
+
+Зашифруйте, используя вместо person@email.com тот тмейл, который вы ввели ранее при генерации ключа:
 
 
 ```bash
@@ -35,8 +39,7 @@ gpg --encrypt --sign --armor -r person@email.com send.txt
 
 Посмотрите его содержимое:
 
-![pgp-2-message.jpg](../img/pgp-2-message.jpg)
-
+![gpg-2-message.jpg](../img/gpg-2-message.jpg)
 
 
 ## Расшифровка сообщения.
@@ -45,11 +48,12 @@ gpg --encrypt --sign --armor -r person@email.com send.txt
 gpg -o - send.txt.asc 
 ```
 
--o - это вывод прямо на экран (по умолчанию - в файл)
+`-o -` это вывод прямо на экран (по умолчанию - в файл)
 
 
-![pgp-3-decrypt.jpg](../img/pgp-3-decrypt.jpg)
+![gpg-3-decrypt.jpg](../img/gpg-3-decrypt.jpg)
 
+# GPG в реальных коммуникациях
 
 ## Импорт чужого публичного ключа
 
