@@ -86,7 +86,7 @@ data.sort_values(by="height").plot.line(ax=ax, x="height", y="predicted")
 
 data = pd.DataFrame({
    "height":[162,180,170,155],
-   "weight":[54.5,90, 50.1, 45.8]
+   "weight":[54.5,90, 50.1, 45.8],
    "sex":[1,0, 1, 0]
 })
 data
