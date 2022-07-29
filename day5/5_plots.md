@@ -43,6 +43,8 @@ plt.show()
 ## Гистограммы
 
 ```python
+import numpy as np
+
 mu, sigma = 100, 15
 x = mu + sigma * np.random.randn(10000)
 
