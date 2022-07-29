@@ -6,7 +6,7 @@
 
 В первой ячейке устанавливаем требуемые пакеты:
 
-`!pip -y install pandas scikit-learn matplotlib`
+`!pip install pandas scikit-learn matplotlib`
 
 В следующей ячейке импортируем:
 
@@ -20,11 +20,13 @@ import matplotlib.pyplot as plt
 
 В следующей ячейке
 
+```python
 data = pd.DataFrame({
    "height":[162,180,170,155],
    "weight":[54.5,90, 50.1, 45.8]
 })
 data
+```
 
 ## Модель обучения
 
@@ -84,18 +86,20 @@ data.sort_values(by="height").plot.line(ax=ax, x="height", y="predicted")
 
 Предположим, что мы добавили еше колонку пола в наши данные. Пусть это будет целевая переменная, а рост и вес сделаем признаками.
 
+```python
 data = pd.DataFrame({
    "height":[162,180,170,155],
    "weight":[54.5,90, 50.1, 45.8],
    "sex":[1,0, 1, 0]
 })
 data
+```
 
 Где 0 - мужчина, 1 - женщина. (Мы так закодировали, это наш выбор)
 
 ## Модель теперь другая
 
-lr = LogisticRegression()
+`lr = LogisticRegression()`
 
 ## Обучаем почти так же:
 
