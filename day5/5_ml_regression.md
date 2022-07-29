@@ -100,7 +100,7 @@ data
 ## Модель теперь другая
 
 ```python
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LogisticRegression
 lr = LogisticRegression()
 ```
 
