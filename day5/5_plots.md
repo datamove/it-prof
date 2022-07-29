@@ -59,5 +59,5 @@ plt.grid(True)
 plt.show()
 ```
 
-![plt_historgramm](../img/plt_histogramm.jpg)
+![plt_histogramm](../img/plt_histogramm.jpg)
 
