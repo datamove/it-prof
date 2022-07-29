@@ -67,7 +67,7 @@ data
 Нанесем на график наши данные точками и нашу модель линией:
 
 ```python
-fig, ax = plt.subplots(figsize=(3,2)
+fig, ax = plt.subplots(figsize=(3,2))
 data.sort_values(by="height").plot.line(ax=ax, x="height", y="weight", style='o')
 data.sort_values(by="height").plot.line(ax=ax, x="height", y="predicted")
 ```
@@ -99,7 +99,10 @@ data
 
 ## Модель теперь другая
 
-`lr = LogisticRegression()`
+```python
+from sklearn.linear_model import LinearRegression
+lr = LogisticRegression()
+```
 
 ## Обучаем почти так же:
 
