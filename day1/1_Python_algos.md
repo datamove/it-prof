@@ -2,7 +2,7 @@
 
 Алгоритм - последовательность дествий (команд) для достижения определенного результата.
 
-![sorting table](sorting table.jpg)
+![sorting table](../img/it1-sorting-table.jpg)
 
 ## Алгоритмы поиска
 
