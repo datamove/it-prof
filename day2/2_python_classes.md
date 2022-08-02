@@ -1,80 +1,134 @@
 # Занятие 3. Программирование на Python. Классы и объектно-ориентированное программирование. 
 
-Пусть мы хотим вычислить вес человека. В физике вес - это сила, с которой масса давит на опору. То есть человек на зeмлю. На земле это еще называется сила тяжести. 
+Схраняем сведения о животных.
 
-Формула: P = m * g , где
+Массу, рост, число ног
 
-* m - масса тела
-* g - ускорение свободного падения (на Земле - 9.8 Н)
-* P - Вес тела.
-
-Мы можем написать вот такую функцию:
+Как сохранять? Например в словаре?
 
 ```python
-def get_weigh_on_Earth(m):
-    P = m * 9.8
-    return P
+animals = {
+  "hippo": { "weight": 2000, "height": 1.0, "legs": 4 },
+  "duck": { "weight": 5.0, "height": 0.3, "legs": 2 },
+  "python": { "weight": 20.0, "height": 0.15, "legs": 0 },
+}
+
+animals["duck"]["weight"]
 ```
 
-Мы можем так же определить и функцию с двумя аргументами, в которую передаем и вес, и ускорение свободного падения:
+А теперь рассмотрим метод инкапсуляции данных в одной структуре - классе.
+
 
 ```python
-def get_weigh(m, g):
-    P = m * g
-    return P
+class Animal():
+
+  def __init__(self, weight, height, legs):
+      self.weight=weight
+      self.height=weight
+      self.legs=weight
 ```
 
-Но все равно стоит вопрос, где хранить значения g? Когда мы соединим вместе переменные и функции для работы с ними, мы получаем классы.
-
-## Инкапсуляция
-
-```class Planet:
-     def __init__(self, g):
-        self.g = g
-
-
-     def get_weight(self, m):
-        return self.g * m
-```
-
-Работа с классами:
+Использование:
 
 ```python
-earth = Planet(9.8)
-earth.get_weight(50)
+duck = Animal(5.0, 0.3, 2)
+duck.weight
 ```
 
-для Луны:
+Путь мы хотим определить, тяжелее ли утка человека?
+Добавим функция для сравнения веса. Заодно еще добавим функцию для "движения". 
 
+
+```python
+class Animal():
+
+  def __init__(self, weight, height, legs):
+      self.weight=weight
+      self.height=height
+      self.legs=legs
+
+  def is_heavier(self, w):
+      return True if self.weight > w else False
+
+  def go(self):
+      print("I go")
+      return
+  
 ```
-moon = Planet(1.62)
-moon.get_weight(50)
+
+Используем:
+
+```python
+duck=Animal(5.0, 0.3, 2)
+hippo=Animal(2000.0, 1.5, 4)
+print(duck.is_heavier(70))
+print(hippo.is_heavier(70))
 ```
+
 
 ## Наследование
 
-```python
-class PlanetWithSatellites(Planet):
-     def __init__(self, g, number_of_satellites=0):
-        self.g = g
-        self.number_of_satellites = number_of_satellites
-
-     def get_number_of_satellites(self):
-        return self.number_of_satellites
-```
+Разделим животных на летающих и ходящих:
 
 ```python
-earth = PlanetWithSatellites(9.8, 1)
-print(earth.get_number_of_satellites())
-print(earth.get_weight(50))
+class FlyingAnimal(Animal):
+
+  def __init__(self, weight, height, legs, max_flight_height):
+      self.weight=weight
+      self.height=height
+      self.legs=legs
+      self.max_flight_height=max_flight_height
 ```
 
-для Луны:
+и
 
+```python
+class WalkingAnimal(Animal):
+  pass
 ```
-moon = PlanetWithSatellites(1.62, 0)
-print(moon.get_weight(50))
-print(moon.earth.get_number_of_satellites())
+
+Мы можем не переопределять методы из родительского класса, они наследуются!
+
+```python
+fox=WalkingAnimal(50.,.6,4)
+print(fox.is_heavier(40))
+print(fox.go())
+
+eagle=FlyingAnimal(50., .6 , 2, 30)
+print(eagle.is_heavier(40))
+print(eagle.go())
 ```
+
+
+## Полиморфизм
+
+Мы можем переопределить функцию go() для FlyingAnimal:
+
+```python
+class FlyingAnimal(Animal):
+
+  def __init__(self, weight, height, legs, max_flight_height):
+      self.weight=weight
+      self.height=height
+      self.legs=legs
+      self.max_flight_height=max_flight_height
+
+  def go(self):
+      print("I fly")
+      return
+```
+
+и тогда Орел будет "летать", а лиса по прежнему "ходить".
+
+```python
+eagle=FlyingAnimal(50., .6 , 2, 30)
+print(eagle.is_heavier(40))
+print(eagle.go())
+```
+
+
+## Задание
+
+Где еще можно применить концепцию классов. Придумайте еще один пример для иллюстрации одного из свойств ООП - инкапсуляции, наследования, полиморфизма. Или сразу всех.
 
 
