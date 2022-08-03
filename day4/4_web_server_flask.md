@@ -6,6 +6,8 @@
 
 ### среда
 
+Виртуальные среду используются, когда вы ведете разработку нескольких программ и у каждой свой набор библиотек, или даже версий питона.
+
 Создайте виртуальный энвайронмент flaskenv, активируйте его, и установите туда пакет Flask c зависимостям:
 
 ```bash
@@ -48,8 +50,13 @@ Port - по латински дверь. Через двери можно зай
 
 Запустите:
 
+```bash
+python flask-app.py
 ```
-(flaskenv) datamove@docker1:~$ python flask-app.py
+
+Ваш вывод будет похож на то, что ниже. Это не команда, ее не надо копи-вставлять в 
+
+```
  * Serving Flask app "flask-app" (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
@@ -66,7 +73,12 @@ Port - по латински дверь. Через двери можно зай
 Теперь откройте новый терминал на вашей виртуалке и вызовите там curl с вашим URL (подставляя порт):
 
 ```
-(flaskenv) datamove@docker1:~$ curl http://10.55.55.28:PORT
+curl http://10.55.55.28:PORT
+```
+
+Вы должны увидеть:
+
+```bash
 Hello world!(flaskenv) ubuntu@kod-4:~$ 
 ```
 
@@ -119,39 +131,12 @@ def do_something(my_param):
 Запустите и сделайте вызов следующим образом (передаем объект json в теле запроса):
 
 ```
-(flaskenv) datamove@docker1:~$ curl -X POST -H "Content-Type: application/json" -d '{"test-key":"test-value"}' http://localhost:5000/do_something/3
+curl -X POST -H "Content-Type: application/json" -d '{"test-key":"test-value"}' http://localhost:5000/do_something/3
+```
+
+Вывод:
+```
 PARAMETER 3
 POST DATA: {'test-key': 'test-value'}
 ```
-
-Метод GET используется по умолчанию, то есть как в `hello_world()`. В методе GET параметры передаются в URL следующим образом:
-
-```
-(flaskenv) datamove@docker1:~$ curl -X GET -H "Content-Type: application/json" 'http://localhost:5000/do_something_with_parapms?param1=23&param2=36'
-```
-
-А вот как мы их получаем в программе с Flask.
-
-```
-@app.route('/do_something_with_params', methods=['GET'])
-def do_something_with_params():
-    param1 = request.args.get('param1')
-    param2 = request.args.get('param2')
-    return(f"PARAM1 {param1} PARAM2 {param2}\n")
-```
-
-Вот еще пример для обработки ошибок и вывода json одновременно:
-
-```
-from flask import request, abort, make_response, jsonify
-
-@app.errorhandler(404)
-def not_found(error):
-    return make_response(jsonify({'error': 'Not found. Bad luck!'}), 404)
-```
-
-## Links
-
-* https://flask.palletsprojects.com/en/2.0.x/
-* https://en.wikipedia.org/wiki/Flask_(web_framework)
 
