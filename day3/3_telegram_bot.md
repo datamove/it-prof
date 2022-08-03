@@ -51,11 +51,40 @@
 
 Сохраните и выйдите их редактора (Ctlr-X)
 
+```bash
+#!/bin/bash
+
+chat_id="476691449"
+token="5547185149:AAEwdOAD-pSAvNwcjsl4Km_pwEcwN1c9DdY"
+
+pic=$1
+
+date=`date +'%d%m%Y-%H:%M'`
+
+if curl https://api.telegram.org/bot$token/sendphoto -F chat_id=$chat_id -F photo=@$pic;
+then
+  echo Success at $date!
+else
+  echo Error at $date
+fi
+```
+
+
 Дайте файлу исполняемый аттрибут:
 
 ```bash
 chmod +x bot_send.sh
 ```
+
+запуск:
+
+```bash
+./bot_send.sh имя_файла_с_фото
+```
+
+Задание
+
+Модифицируйте скрипт так, чтобы он посылал сообщение, если его аргумент - строка, или фото, если его аргумент - картинка.
 
 ## запуск скрипта при загрузке
 

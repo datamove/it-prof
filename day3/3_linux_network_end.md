@@ -70,6 +70,7 @@ jp2a --output=ascii.txt --colors input.png
 
 ```bash
 sudo apt install fortune
+fortune
 ```
 
 ### Cmatrix
@@ -88,5 +89,8 @@ cbonsai -l
 
 ## Real stuff
 
-`tetris-bsd`
+```bash
+sudo apt install bsdgames
+tetris-bsd
+```
 
