@@ -63,3 +63,34 @@ plt.show()
 
 ![plt_histogramm](../img/plt_histogramm.jpg)
 
+## Категориальные (нечисловые) переменные
+
+```python
+names = ['group_a', 'group_b', 'group_c']
+values = [1, 10, 100]
+
+plt.figure(figsize=(9, 3))
+
+plt.subplot(131)
+plt.bar(names, values)
+plt.subplot(132)
+plt.scatter(names, values)
+plt.subplot(133)
+plt.plot(names, values)
+plt.suptitle('Categorical Plotting')
+plt.show()
+```
+
+![plt_category](../img/plt_category.jpg)
+
+
+## Задания
+
+Сделайте графики по датасету Титаник.
+
+* число пассажиров в каждом классе (категориальный, типа .bar() или гистограмма .hist())
+* ...
+
+
+
+
