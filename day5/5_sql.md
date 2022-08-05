@@ -32,7 +32,7 @@ ps.sqldf("select * from data where height>170")
 ### Подсчитаем число строк
 
 ```python
-ps.sqldf = "select count(*) from data"
+ps.sqldf = ("select count(*) from data")
 ```
 
 ### Сколько 
