@@ -31,7 +31,9 @@ ps.sqldf("select * from data where height>170")
 
 ### Подсчитаем число строк
 
-`ps.sqldf = "select count(*) from data"`
+```python
+ps.sqldf = "select count(*) from data"
+```
 
 ### Сколько 
 
@@ -67,16 +69,16 @@ df.head(25)
 
 | Колонка | Значение      | Прмечание                      |
 ----------|---------------|---------------------------------
-| survival |	Survival |	0 = No, 1 = Yes|
-| pclass |	Ticket class |	1 = 1st, 2 = 2nd, 3 = 3rd|
-| sex |	Sex 	
-| Age |	Age in years 	
-| sibsp |	# of siblings / spouses aboard the Titanic| 	
-| parch |	# of parents / children aboard the Titanic |	
-| ticket |	Ticket number 	|
-| fare |	Passenger fare 	|
-| cabin |	Cabin number 	|
-| embarked | 	Port of Embarkation |	C = Cherbourg, Q = Queenstown, S = Southampton
+| survival |	выжил или нет |	0 = No, 1 = Yes|
+| pclass |	Класс билета |	1 = 1st, 2 = 2nd, 3 = 3rd|
+| sex |	Пол 	
+| Age |	Возраст 	
+| sibsp | число братьев или сестер на том же рейсе | 	
+| parch |	число родителей или детей на том же рейсе |	
+| ticket |	номмер билета 	|
+| fare |	цена билета 	|
+| cabin |	номер каюты 	|
+| embarked | 	В каком порту сел |	C = Cherbourg, Q = Queenstown, S = Southampton
 
 
 ### Разведочный анализ 
@@ -131,6 +133,6 @@ lr = LogisticRegresion(C=0.1)
 ```
 Вычислите точность во всех случаях и скажите, при каком С точность выше?
 
-Поздравляю! Вы - дата сайентист.
+Поздравляю! Вы - дата сайентист!
 
 
